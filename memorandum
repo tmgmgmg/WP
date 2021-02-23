@@ -1,0 +1,692 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>WordPress</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="36143aac-9d05-4527-9cad-9b6dcbe2c53c" class="page sans"><header><h1 class="page-title">WordPress</h1></header><div class="page-body"><nav id="5e617ae3-a166-4ac7-8368-5923a41870b5" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9dc8adfd-78dc-4a86-9e84-8d97319e9ae4">テンプレート階層</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#61909b7f-ca99-4b1a-9179-006469c15b13">テンプレートタグ</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d8d259b2-3533-4683-8a76-abb60ecb4afb">the_post();</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b1681033-9b4a-4c17-86ae-97edb0cb2253">the_title();</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#be5c76ce-b4fb-4b54-b1e0-3041c6f6d436">the_time();</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e2f3c221-d0af-4b41-a0fa-762e94a28b22">日付と時刻の書式一覧</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ef72694e-b3f0-4670-bc5a-c77a8f2b7e1c">number_format</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c0ba69ac-d53b-486d-9baf-c9a82964b030">the_content</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#67651d53-490d-4756-a92b-7383559ba5a7">the_excerpt</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#00878184-8003-4fe4-8439-14e26667e573">the_author</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3b1f163e-d41b-4d9e-a698-127204b6e829">the_permalink</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d670f9b5-6860-4b70-9755-3965615a4e4f">ページネーション</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#8ef879e5-3d90-4781-83aa-b8ae57d07dd9">next_posts_link</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e4f9a35b-9973-498e-beb1-39a2e3d0d2f5">previous_posts_link</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#845adaff-4434-4c15-b44c-057202f8e456">paginate_links</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0d2cf283-2171-4ec6-909b-2e34ca0f13f5">get_template_directory_uri()</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#97419d15-298c-490d-8001-a62ff27c8420">get_stylesheet_directory_uri()</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b0243518-fe2f-4b77-a65d-9b63c10baebc">親テーマ、子テーマ両方読み込み</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f999e8b4-ff29-4f6b-9f01-89d4b3212a3b">home_url</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0209448e-fc33-407f-9c65-fe4518634be0">bloginfo()</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#9e9b459d-fd2d-4363-9c82-4f02bed60d13">例</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b0c3bf9a-70a4-461a-bd15-dedeb35b35e4">name</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#9279b53c-a4e6-430f-89e5-fb07e505acf8">discription</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b114d570-e6c0-49b2-8925-442682682f8d">一覧URL</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a3c23701-4179-4774-a782-b32ad2a6117d">アイキャッチ画像設定</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#9ed17a5b-f232-4e8c-a724-b830a19f233e">the_post_thumbnail</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#1a73eb42-9023-410f-8519-4dd317fbee03">the_post_thumbnail_id</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#21c294c3-8acb-4839-8f5a-2487b62f5c37">条件分岐</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d0264407-4b03-4b03-a32a-a150e7763a90">ループ処理</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#959da400-0856-4b4b-ac82-41edc920e634">have_post</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9780b4a2-59b6-44dc-aa7a-e5a54d94f6a8">テーマ作成に必須</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#dd8bf634-e036-47d7-a375-1b14209bbdb7">wp_head();</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#a0d77326-a322-4936-a1f1-2365b25e4826">wp_footer();</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#7ad8daf8-7355-43e1-bf73-c9ec71f43c04">add_theme_support();</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#575a893f-8e0d-49e3-b2ad-c3adeeb9de8a">不要なもの</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#695f1587-dd38-4d57-9552-8969a8046d9b">コピペ</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f7ba8e7c-d78b-451e-b620-a73399d6bd46">ショートコード</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f9445338-0998-4bad-9696-bc7ae8a21fd5">管理画面</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#edb91b01-57e0-4e2c-b0fa-d301da4750ec">管理画面カスタマイズのポイント8つ</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#4af09945-7103-4a4a-b1c9-d30e549dea87">管理画面左のメニューを表示・非表示</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#4a52fadc-d25c-47d5-8f9c-b17a71311e7c">WordPressの管理画面カスタマイズ時に使えるハック #2　神サイト</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a534d47d-f4cc-438b-986c-c04ac2c8f54e">カスタムフィールド</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b6ddfbf8-31c2-458d-bec4-b0415fc4e865">WP内の固定・投稿ページ内で表示するためには</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e1669d5f-9498-4739-b2a4-774a945ac682">get_post_meta();</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#31f27d8a-8842-4a2b-9559-5599a54f02cc">Advanced Custom Fields</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#8eac0fbc-d05b-4bd8-9442-b3fe80cda3d6">Advanced Custom Field内でショートコードを実行したい</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#a63aa7d4-9dd6-46ee-832b-b88cb3581e11">the_field();</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3ccfdc18-a466-4f11-bc55-cf8817df764f">トップページやサイドバーで特定のカスタム投稿タイプを表示する</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9031b864-6797-4369-89b9-386a412f0b0a">カスタム投稿からデータを取ってくる</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#3fe6db97-94c1-42a2-851d-db4a0101d93c">カスタム投稿名を表示</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fe8e19d3-c4fb-4e5b-8ec2-e7497a05771f">権限とか</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#30d427d7-7f1b-4005-ae16-e71f2d008a2e">.htpasswdを出力してくれる</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d4486ae8-0684-4dbc-958f-72a5ba1bb4f1">プラグイン</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9b5dc325-3c07-41a8-afb8-89fa28cda5db">Ultimate Member</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#3338c3f8-566b-4318-a65b-af31f6d574f9">Gravatar</a></div></nav><p id="4c03a18f-235d-48dc-bd48-68de3e7fac94" class="">
+</p><h1 id="9dc8adfd-78dc-4a86-9e84-8d97319e9ae4" class="">テンプレート階層</h1><figure id="039b3e70-e7de-4232-ac0b-a766e80e1a41"><a href="https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E9%9A%8E%E5%B1%A4" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">テンプレート階層</div><div class="bookmark-description">このページは最新情報に追随して更新されていません。 最新のテンプレート階層については テーマハンドブック (英語版) をご確認ください。 WordPress テンプレートはパズルのピースのように組み合わせられ、サイト上で Web ページを表示します。一部のテンプレート（例: ヘッダー・フッターテンプレート）はすべての Web ページ内で使用される一方、他のテンプレートはある条件の下でのみ使用されます。 このドキュメンテーションは、次の疑問に答えてくれるでしょう。 ある種類のページを表示するとき、どのテンプレートファイルが使われるのか？ WordPress 1.5 で 「テーマ」機能が導入されて以来、 テンプレートはますますカスタマイズしやすくなりました。 WordPress テーマを作成 するには、WordPress がブログ上の各種ページを表示するためにどのようにテンプレートファイルを選択するのかを正しく理解する必要があります。すでにあるテーマをカスタマイズしたい場合にもどのテンプレートファイルを編集すればいいのかを知る手がかりになるでしょう。 WordPress がページの種類（クエリタイプ）に合うテンプレートファイルを特定する方法は一つではありません。WordPress テーマ開発者は 条件分岐タグを使用して、あるページの生成にどのテンプレートを使うかを制御できます。テーマの中にはここで紹介するすべてのテンプレートファイルを実装しないテーマもありますし、条件分岐タグを使って他のテンプレートファイルを読み込むテーマもあります。より詳細な情報については 条件分岐タグおよび テーマの作成ページの「クエリベースのテンプレート」セクション を参照してください。 WordPress は クエリ文字列 - Web サイトの各リンク内に含まれる情報 - を使用して、ページの表示にどのテンプレートあるいはテンプレートの集合を使用すべきかを決定します。 まず WordPress はすべてのクエリ文字列とクエリタイプを照合し、どの種類のページ(検索ページ、カテゴリーページ、ホームページ等) が要求されているかを決定します。 次にテンプレートが選択され - そして、Web ページが生成されます。テンプレートは、WordPress テンプレート階層で規定された順番に、WordPress テーマ内で該当のテンプレートが利用かどうかにより決まります。 WordPress は現在のテーマディレクトリ内から特定のファイル名でテンプレートを探し、以下の該当の節で挙げたリストから</div></div><div class="bookmark-href">https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E9%9A%8E%E5%B1%A4</div></div><img src="https://wpdocs.osdn.jp/wiki/images/thumb/wp-template-hierarchy.jpg/750px-wp-template-hierarchy.jpg" class="bookmark-image"/></a></figure><figure id="6ed9e001-96a0-41e2-95e7-0700f36a5a8d" class="image"><a href="https://wpdocs.osdn.jp/wiki/images/wp-template-hierarchy.jpg"><img src="https://wpdocs.osdn.jp/wiki/images/wp-template-hierarchy.jpg"/></a></figure><h1 id="61909b7f-ca99-4b1a-9179-006469c15b13" class="">テンプレートタグ</h1><h2 id="d8d259b2-3533-4683-8a76-abb60ecb4afb" class="">the_post();</h2><p id="e85faabd-eeb7-4608-8b1e-8e4758dcdae6" class="">⇒<strong>これがないと記事表示されない</strong></p><p id="b9c99a59-c7c0-4a44-9fd5-a609874eaa6a" class="">画面上では見えないのでタイトルなどを囲う位置に設置する</p><p id="f00894f2-21ff-4fa6-b735-bd8349f7cadb" class="">
+</p><h2 id="b1681033-9b4a-4c17-86ae-97edb0cb2253" class="">the_title();</h2><p id="a3de6ca6-4bea-44f3-b597-e50ede95ef21" class="">タイトル表示</p><h2 id="be5c76ce-b4fb-4b54-b1e0-3041c6f6d436" class="">the_time();</h2><p id="5d030944-f5f0-476a-b50b-1967e668ab91" class="">投稿した日付</p><p id="443dd306-c503-4d94-91a4-5d5d0b0bc6a7" class="">パラメータをとれる</p><p id="b6ad2c22-ba79-40ee-b498-eb9974add473" class="">例：the_time( &quot;Y年n月j日 i&quot; ); 　ｉは曜　⇒　2021年2月8日　水曜日</p><p id="f5103abd-f97d-419a-b463-6fed423b8e4a" class="">例：the_time( &quot;Y-m-d&quot; );  日付一桁が嫌ならこっち</p><p id="49e2495d-d0fa-4423-b5d4-f5c1334607ec" class="">⇒　2021-02-08  <strong>y-m-dはめっちゃ使う</strong></p><h3 id="e2f3c221-d0af-4b41-a0fa-762e94a28b22" class="">日付と時刻の書式一覧</h3><p id="46fa1ea4-e7cb-4429-a73b-68795d641519" class=""><a href="https://ja.wordpress.org/support/article/formatting-date-and-time/">https://ja.wordpress.org/support/article/formatting-date-and-time/</a></p><h2 id="ef72694e-b3f0-4670-bc5a-c77a8f2b7e1c" class="">number_format</h2><p id="721edc93-3ff9-49c5-89ce-f7a2c0780302" class="">この関数で囲ってあげると3桁ごとに数値に,がつく。</p><p id="7b024fba-b969-49ab-8a56-755f2083e5b1" class="">1500　⇒　1,500</p><h2 id="c0ba69ac-d53b-486d-9baf-c9a82964b030" class="">the_content</h2><p id="5da469c8-43dd-473c-93e2-598065ac19d2" class="">本文を表示</p><h2 id="67651d53-490d-4756-a92b-7383559ba5a7" class="">the_excerpt</h2><p id="cee58ac0-3041-4021-90b6-72fcfe8fc839" class="">抜粋表示</p><h2 id="00878184-8003-4fe4-8439-14e26667e573" class="">the_author</h2><p id="4c9e1095-6884-47f2-902e-96ca9c53189d" class="">個別設定のユーザー名を呼び出す</p><h2 id="3b1f163e-d41b-4d9e-a698-127204b6e829" class="">the_permalink</h2><p id="ef758b46-a4b5-4e35-b8fa-f751b5705a65" class="">
+</p><h2 id="d670f9b5-6860-4b70-9755-3965615a4e4f" class="">ページネーション</h2><h3 id="8ef879e5-3d90-4781-83aa-b8ae57d07dd9" class="">next_posts_link</h3><p id="7ed3b730-08b5-4c1e-b8c7-29b1ed9b1bb1" class="">次ページボタン</p><h3 id="e4f9a35b-9973-498e-beb1-39a2e3d0d2f5" class="">previous_posts_link</h3><p id="53b2ca02-bf8f-4948-b9bc-02681e119cca" class="">前ページボタン</p><h3 id="845adaff-4434-4c15-b44c-057202f8e456" class="">paginate_links</h3><p id="d089e9dd-3fd1-4ea5-86d0-dd56b15b208a" class="">番号付きのページネーション</p><h2 id="0d2cf283-2171-4ec6-909b-2e34ca0f13f5" class="">get_template_directory_uri()</h2><p id="f15acab4-e94a-43ea-8a4e-37ddee619cdf" class="">テンプレートまで取ってきてくれる</p><p id="c12d7671-c5b9-4793-9970-4859b2b8e6dd" class="">wordpressのwp_contentのthemesの中の自分のテーマまで引っ張ってくれる</p><p id="4dac3c8f-bb0d-44ea-9b8f-10bcab3b139d" class=""><strong>echoとセット！</strong></p><h2 id="97419d15-298c-490d-8001-a62ff27c8420" class="">get_stylesheet_directory_uri()</h2><p id="4fcecb92-4f3c-4424-96c1-7d3260db456c" class="">※子テーマの場合はこちら</p><p id="c240444f-ffa1-40a2-9ef6-952ae75d69f3" class="">
+</p><h3 id="b0243518-fe2f-4b77-a65d-9b63c10baebc" class="">親テーマ、子テーマ両方読み込み</h3><p id="13d3af91-94c5-46aa-9092-3503da8d4b78" class=""><a href="https://bambooworks.co/wordpress-child-theme-css-js/">https://bambooworks.co/wordpress-child-theme-css-js/</a></p><h2 id="f999e8b4-ff29-4f6b-9f01-89d4b3212a3b" class="">home_url</h2><p id="1a5ff916-398f-4041-84ac-8b7465348579" class="">トップページのURL</p><h2 id="0209448e-fc33-407f-9c65-fe4518634be0" class="">bloginfo()</h2><p id="25b9b66d-663a-4097-b855-26a313766f9a" class="">色々な設定を持ってきてくれる</p><h3 id="9e9b459d-fd2d-4363-9c82-4f02bed60d13" class="">例</h3><h3 id="b0c3bf9a-70a4-461a-bd15-dedeb35b35e4" class="">name</h3><p id="1a3fc701-d913-4033-acfe-9bedda65122b" class="">⇒　設定→一般で設定されたサイトのタイトル</p><h3 id="9279b53c-a4e6-430f-89e5-fb07e505acf8" class="">discription</h3><p id="30609a7c-3a28-420a-93d9-8ec315231d0c" class="">⇒　設定→一般で設定されたサイトのキャッチフレーズ</p><h3 id="b114d570-e6c0-49b2-8925-442682682f8d" class="">一覧URL</h3><p id="43ef1084-9663-46c0-9f6d-635bd5942da5" class=""><a href="https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/bloginfo">https://wpdocs.osdn.jp/テンプレートタグ/bloginfo</a></p><p id="13aa3f89-5070-4a24-825e-f4cf19bf6e98" class="">
+</p><p id="f0a00955-fb52-4b33-9b10-f6c3e321acd7" class="">
+</p><div id="7e48a264-564a-46f1-91e7-3ca8c1dda9d7" class="column-list"><div id="9bb8d141-98c6-4169-98d6-2f0dd88c2ebc" style="width:50%" class="column"><h2 id="a3c23701-4179-4774-a782-b32ad2a6117d" class="">アイキャッチ画像設定</h2></div><div id="68e3d421-7d70-4a26-bef5-5dbd2186491b" style="width:50%" class="column"><p id="26843c68-4588-45a8-968c-45892d02f317" class="">
+</p></div></div><h3 id="9ed17a5b-f232-4e8c-a724-b830a19f233e" class="">the_post_thumbnail</h3><p id="7ffb2782-a495-48d5-a180-0b3a5c4670f5" class="">ただアイキャッチを出す　応用効かない</p><h3 id="1a73eb42-9023-410f-8519-4dd317fbee03" class="">the_post_thumbnail_id</h3><p id="ac4ad3e7-a075-42ac-9a7c-14373b2d4f46" class="">投稿に紐づいたidを取得。</p><p id="2deddad7-c148-4568-bce7-48828cf4a7a8" class="">使用例：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="be311243-1bdf-4992-9a56-45d5dafbeb94" class="code"><code><span class="token variable">$id</span> <span class="token operator">=</span> <span class="token function">the_post_thumbnail_id</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$img</span> <span class="token operator">=</span> <span class="token function">wp_get_attachment_image_src</span><span class="token punctuation">(</span><span class="token variable">$id</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//表示させる時は</span>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">"&lt;? php echo <span class="token interpolation"><span class="token variable">$img</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span></span>; ?>"</span><span class="token operator">></span></code></pre><h1 id="21c294c3-8acb-4839-8f5a-2487b62f5c37" class="">条件分岐</h1><p id="8b1a8b33-6f10-44ec-b3dc-488e51caf426" class=""><a href="https://wpdocs.osdn.jp/%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B2%90%E3%82%BF%E3%82%B0">https://wpdocs.osdn.jp/条件分岐タグ</a></p><h2 id="d0264407-4b03-4b03-a32a-a150e7763a90" class="">ループ処理</h2><h3 id="959da400-0856-4b4b-ac82-41edc920e634" class="">have_post</h3><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="2ec5b696-c394-4338-bded-1ad9d5fd583b" class="code"><code>wihle <span class="token punctuation">(</span><span class="token function">have_post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token function">the_post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+中身
+<span class="token keyword">endwhile</span></code></pre><p id="6d019ae3-9559-4f64-954a-02f11a592b00" class="">wihle (have_post()): the_post();はテンプレで覚える</p><h2 id="9780b4a2-59b6-44dc-aa7a-e5a54d94f6a8" class="">テーマ作成に必須</h2><h3 id="dd8bf634-e036-47d7-a375-1b14209bbdb7" class="">wp_head();</h3><p id="bf4865ca-12fd-4cd7-a6fe-5f6d1cdcd134" class="">head内で読み込む</p><p id="cfeabdd0-548f-4301-9adb-97d814daff60" class="">⇒WPに必要な設定ファイルを読み込む</p><p id="39501659-e491-4ebd-aeca-7b88bee19a7c" class="">
+</p><h3 id="a0d77326-a322-4936-a1f1-2365b25e4826" class="">wp_footer();</h3><p id="edb95ccc-1d6c-425d-ae72-0ce3e28b2ac4" class="">bodyの一番後ろに読み込む</p><p id="4e6f26e6-ff6d-4d91-978a-e4525c2cc51f" class="">scriptなど読み込み</p><h3 id="7ad8daf8-7355-43e1-bf73-c9ec71f43c04" class="">add_theme_support();</h3><p id="349880a7-246b-4c6c-a420-136275bd4084" class="">WP上で表示させるアイテムなどを指定する</p><p id="3a9cd8c7-c69a-455e-93f3-c707e1f16ab1" class="">初期設定例：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="a83f393e-9698-4354-bce3-47313027c8e1" class="code"><code><span class="token keyword">function</span> <span class="token function">init_func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token function">add_theme_support</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'title-tag'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>　<span class="token comment">//タイトルタグを設置する</span>
+ <span class="token function">add_theme_support</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'post-thumbnails'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//ページ内にアイキャッチを出す</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">add_action</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'init'</span><span class="token punctuation">,</span><span class="token single-quoted-string string">'init_func'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p id="9790ebd7-05c8-46a9-844d-8c084d8a07a0" class="">
+</p><p id="ec6c7ac1-2251-4268-8c97-151166858f79" class="">
+</p><h3 id="575a893f-8e0d-49e3-b2ad-c3adeeb9de8a" class="">不要なもの</h3><p id="7ba168b1-551b-4d7a-8806-913d15029a8e" class="">・metaディスクリプション</p><p id="ffc22c20-4784-40f0-a100-8f970add6dc7" class="">・titleタグ</p><p id="c82ef4f1-433a-4d64-8658-d89c45c39a56" class="">はwp_headerと管理画面の設定で表示するので削除してOK</p><h1 id="695f1587-dd38-4d57-9552-8969a8046d9b" class="">コピペ</h1><p id="522df9f3-9487-401f-adc0-dc6cf6c79347" class="">
+</p><p id="26b5e7de-dd69-4c69-86da-4d18bf965d95" class="">
+</p><h3 id="f7ba8e7c-d78b-451e-b620-a73399d6bd46" class="">ショートコード</h3><p id="87be2c4c-3a0c-4516-b65e-89c709602f5e" class="">&lt;?php echo do_shortcode(&#x27;[ショートコードの文字列]&#x27;); ?&gt;</p><p id="beda8d11-0dc2-4c83-b53d-d45f22316d7a" class="">
+</p><p id="9f9703ec-cd75-4663-bf74-67fdbd05c1c6" class="">
+</p><h1 id="f9445338-0998-4bad-9696-bc7ae8a21fd5" class="">管理画面</h1><h2 id="edb91b01-57e0-4e2c-b0fa-d301da4750ec" class="">管理画面カスタマイズのポイント8つ</h2><p id="71c6d2a3-7785-4270-81a2-d5d2543489ca" class=""><a href="https://b-risk.jp/blog/2019/12/wp-nomiss/">https://b-risk.jp/blog/2019/12/wp-nomiss/</a></p><h3 id="4af09945-7103-4a4a-b1c9-d30e549dea87" class="">管理画面左のメニューを表示・非表示</h3><p id="5e6da79e-dfc8-44c3-a3d0-291bdc1cecd4" class=""><a href="https://yosiakatsuki.net/blog/remove-menu-admin-bar/">https://yosiakatsuki.net/blog/remove-menu-admin-bar/</a></p><h3 id="4a52fadc-d25c-47d5-8f9c-b17a71311e7c" class="">WordPressの管理画面カスタマイズ時に使えるハック #2　神サイト</h3><p id="b744e7c5-ef81-4d0a-ae1c-ddfa526aaef7" class=""><a href="https://www.nxworld.net/wp-admin-customize-hack2.html">https://www.nxworld.net/wp-admin-customize-hack2.html</a></p><h1 id="a534d47d-f4cc-438b-986c-c04ac2c8f54e" class="">カスタムフィールド</h1><h2 id="b6ddfbf8-31c2-458d-bec4-b0415fc4e865" class="">WP内の固定・投稿ページ内で表示するためには</h2><p id="3700c6c0-e087-49f0-82bf-8f0d61097c21" class="">新規ページ⇒詳細⇒オプション　内のカスタムフィールドにチェック　</p><p id="44a29a1d-88c2-4937-888d-29c8a32165c2" class="">
+</p><h2 id="e1669d5f-9498-4739-b2a4-774a945ac682" class="">get_post_meta();</h2><p id="74c5b0d9-34fe-4031-b0bc-e63a976cc772" class="">カスタムフィールドの値をとる</p><p id="51ac9269-59bd-4203-ba67-7d8f52bf57cb" class=""><a href="https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_post_meta">https://wpdocs.osdn.jp/関数リファレンス/get_post_meta</a></p><p id="d8cd2805-872c-4d8c-835f-17ab44d2f8a1" class="">&lt;?php $meta_values = get_post_meta($post_id, $key, $single); ?&gt;　　3つパラメーターが必要</p><p id="6487326e-0fed-4074-b99e-dfda84b3be5d" class="">
+</p><p id="9723c178-53c3-4fbe-ae07-5b38ca13c553" class="">使い方例：</p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="cdb9ea5a-d772-426e-a99a-43f5a961c142" class="code"><code><span class="token variable">$price</span> <span class="token operator">=</span> <span class="token function">get_post_meta</span><span class="token punctuation">(</span><span class="token function">get_the_id</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">,</span> ’価格’ <span class="token punctuation">,</span> <span class="token boolean constant">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span>div<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">?</span>php <span class="token keyword">echo</span> <span class="token variable">$price</span><span class="token punctuation">;</span><span class="token operator">?</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre><p id="bb2d5621-b204-4944-b12d-7337121ab689" class="">get_the_id()でこの記事のidを取得</p><p id="e4e7e3c8-a6a5-4b8c-b634-635c1689f02e" class="">&#x27;価格&#x27;は事前にカスタムフィールドで登録したもの</p><h2 id="31f27d8a-8842-4a2b-9559-5599a54f02cc" class="">Advanced Custom Fields</h2><p id="3d1d9d47-a7c3-49da-ac77-105ef1b2a118" class="">プラグイン。これを入れると管理画面左に「カスタムフィールド」という欄が追加される。</p><p id="6388e2ee-1245-4c8d-adda-54ad1be6c0d6" class="">
+</p><h3 id="8eac0fbc-d05b-4bd8-9442-b3fe80cda3d6" class="">Advanced Custom Field内でショートコードを実行したい</h3><p id="738a8cc6-9bfc-4bb7-baed-b6a1c027a26e" class=""><a href="https://www.sensitivity.jp/wordpress/advanced-custom-fields%E3%81%A7%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%85%A5%E5%8A%9B/">https://www.sensitivity.jp/wordpress/advanced-custom-fieldsでショートコードを入力/</a></p><h3 id="a63aa7d4-9dd6-46ee-832b-b88cb3581e11" class="">the_field();</h3><p id="c4daab05-bf5e-415d-8235-3007cb56fc01" class="">このプラグインの関数()内に作成したフィールド名を入れる</p><p id="52de9edd-441b-4722-91bd-ac9468e07e8e" class="">
+</p><h2 id="3ccfdc18-a466-4f11-bc55-cf8817df764f" class="">トップページやサイドバーで特定のカスタム投稿タイプを表示する</h2><p id="c00a793d-84fc-402e-bc25-14a514aebd5a" class=""><a href="https://www.postit-web.com/2017/02/20/custom_post_loop/">https://www.postit-web.com/2017/02/20/custom_post_loop/</a></p><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css')</style><pre id="a34b9d58-fa1f-4708-9fdc-5ecdf354071d" class="code"><code><span class="token delimiter important">&lt;?php</span>
+  <span class="token variable">$args</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'post_type'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token single-quoted-string string">'images'</span><span class="token punctuation">,</span> <span class="token comment">// カスタム投稿名が「g」の場合</span>
+    <span class="token single-quoted-string string">'posts_per_page'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token comment">// 表示する数</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token variable">$my_query</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WP_Query</span><span class="token punctuation">(</span><span class="token variable">$args</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">?</span><span class="token operator">></span>
+ 
+<span class="token operator">&lt;</span><span class="token operator">?</span>php <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$my_query</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">have_posts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment">// 投稿がある場合 ?></span>
+ 
+  <span class="token operator">&lt;</span>ul<span class="token operator">></span>
+ 
+    <span class="token operator">&lt;</span><span class="token operator">?</span>php <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token variable">$my_query</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">have_posts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token variable">$my_query</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">the_post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">?</span><span class="token operator">></span>
+ 
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> ▽ ループ開始 ▽ <span class="token operator">--</span><span class="token operator">></span>
+ 
+    <span class="token operator">&lt;</span>li<span class="token operator">></span>
+      <span class="token operator">&lt;</span>h3<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">?</span>php <span class="token function">the_title</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">?</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">></span>
+      <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">?</span>php <span class="token function">the_time</span><span class="token punctuation">(</span><span class="token function">get_option</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'date_format'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">?</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+ 
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> △ ループ終了 △ <span class="token operator">--</span><span class="token operator">></span>
+ 
+    <span class="token operator">&lt;</span><span class="token operator">?</span>php <span class="token keyword">endwhile</span><span class="token punctuation">;</span> <span class="token operator">?</span><span class="token operator">></span>
+ 
+  <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+ 
+<span class="token operator">&lt;</span><span class="token operator">?</span>php <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment">// 投稿がない場合?></span>
+ 
+  <span class="token operator">&lt;</span>p<span class="token operator">></span>まだ投稿がありません。<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+ 
+<span class="token operator">&lt;</span><span class="token operator">?</span>php <span class="token keyword">endif</span><span class="token punctuation">;</span> <span class="token function">wp_reset_postdata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></code></pre><p id="9771fdd2-f93d-4ee1-9446-b80fb5f35ba7" class="">
+</p><h2 id="9031b864-6797-4369-89b9-386a412f0b0a" class="">カスタム投稿からデータを取ってくる</h2><figure id="e687820e-2ca9-48d3-9cbf-bdaa5fc463a7"><div class="source"><a href="https://illbenet.jp/view/88">https://illbenet.jp/view/88</a></div></figure><p id="b3ac4ba2-67d1-4615-a0d9-4f32a7405b7a" class="">
+</p><h3 id="3fe6db97-94c1-42a2-851d-db4a0101d93c" class="">カスタム投稿名を表示</h3><p id="cfab2a4c-590c-41bf-ad73-9b68f7e8e3cd" class="">&lt;?php echo esc_html(get_post_type_object(get_post_type())-&gt;label); ?&gt;</p><p id="b4eae0f0-756a-4f7a-ad4a-673a968c9d5a" class="">普通の投稿名なら&lt;?php the_title(); ?&gt;</p><h1 id="fe8e19d3-c4fb-4e5b-8ec2-e7497a05771f" class="">権限とか</h1><h3 id="30d427d7-7f1b-4005-ae16-e71f2d008a2e" class="">.htpasswdを出力してくれる</h3><p id="591a088b-858f-4092-a102-8fcd453efe48" class=""><a href="http://klutche.org/tools/htpasswd/">http://klutche.org/tools/htpasswd/</a></p><p id="58066571-b705-4fd0-be97-914e61af5591" class="">lulls.workなら、lulls.work直下のhtpasswdフォルダに配置する</p><p id="ed9b95db-c4a2-4962-b7f9-537b532c73b7" class="">⇒htaccessファイルの</p><p id="c30324df-35ce-4f5a-b143-a9cefc401ffa" class="">AuthUserFile &quot;/home/lull/lulls.work/htpasswd/ito/.htpasswd&quot;</p><p id="c3878f96-9e05-4024-a3f8-d7f17d372378" class="">も変更する</p><p id="845728fe-9104-4684-a4b0-6789d7c5807d" class="">
+</p><h1 id="d4486ae8-0684-4dbc-958f-72a5ba1bb4f1" class="">プラグイン</h1><h2 id="9b5dc325-3c07-41a8-afb8-89fa28cda5db" class="">Ultimate Member</h2><p id="81b89729-13a2-4151-80f2-435aad23467c" class=""><a href="https://geeksgrowth.com/how-to-use-ultimate-member/">https://geeksgrowth.com/how-to-use-ultimate-member/</a></p><p id="c41531bf-a697-45ed-b785-bb12524ba96a" class="">
+</p><h3 id="3338c3f8-566b-4318-a65b-af31f6d574f9" class="">Gravatar</h3><p id="e53e4d38-db83-430a-8f83-848f1515cb13" class="">WPでアバターを設定するための外部サービス。</p><p id="587239b2-6099-4289-bdb0-0072c7130435" class=""><a href="https://www.afi-b.com/beginner/archives/course/course_site/10396">https://www.afi-b.com/beginner/archives/course/course_site/10396</a></p><p id="2a6767f3-63bd-4ea5-9044-a26b4decc741" class="">WordPressで独自のアバターを設定するには、「Gravatar（グラバター）」という外部サービスを利用するのが一般的です。</p><p id="e602d75f-985a-4e9a-a896-4193e240d924" class="">
+</p></div></article></body></html>
